@@ -1,6 +1,7 @@
 package com.fxhive.pages;
 
 import com.fxhive.constants.ElementRepository;
+import com.fxhive.utils.ConfigUtil;
 
 /**
  * Page Object for the FXhive login screen.
@@ -10,20 +11,21 @@ public class LoginPage extends BasePage {
     /* ---------- Page actions ---------- */
 
     /** Open the login URL */
-    public LoginPage open(String url) {
+    public LoginPage open() {
+        String url = ConfigUtil.getDefaultBaseUrl();
         navigateTo(url);
         return this;
     }
 
     /** Type username */
-    public LoginPage enterUsername(String user) {
-        type(ElementRepository.LOGIN_EMAIL_TEXTBOX, user);
+    public LoginPage enterUsername(String username) {
+        type(ElementRepository.LOGIN_EMAIL_TEXTBOX, username);
         return this;                   // fluent
     }
 
     /** Type password */
-    public LoginPage enterPassword(String pass) {
-        type(ElementRepository.LOGIN_PASSWORD_TEXTBOX, pass);
+    public LoginPage enterPassword(String password) {
+        type(ElementRepository.LOGIN_PASSWORD_TEXTBOX, password);
         return this;
     }
 
@@ -34,10 +36,10 @@ public class LoginPage extends BasePage {
     }
 
     /** Convenience method that performs a full login */
-    public HomePage loginAs(String user, String pass, String url) {
-        return open(url)
-                .enterUsername(user)
-                .enterPassword(pass)
+    public HomePage loginAs(String username, String password) {
+        return open()
+                .enterUsername(username)
+                .enterPassword(password)
                 .clickLogin();
     }
 }

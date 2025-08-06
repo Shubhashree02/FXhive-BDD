@@ -1,5 +1,5 @@
 package com.fxhive.pages;
-
+import com.fxhive.utils.ConfigUtil;
 import com.fxhive.core.DriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +14,7 @@ import java.time.Duration;
  */
 public abstract class BasePage {
 
-    private static final int TIMEOUT = 10;          // seconds
+    private static final int TIMEOUT = ConfigUtil.getTimeout();        // seconds
     private final WebDriver driver;
     private final WebDriverWait wait;
 

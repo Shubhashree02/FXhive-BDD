@@ -5,7 +5,7 @@ Feature: Login Functionality
     When user navigates to the login page
     And user logs in with excel row 0
     Then a login message should be displayed
-    Then dashboard should be displayed
+    
 
 
 

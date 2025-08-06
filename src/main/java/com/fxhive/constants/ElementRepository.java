@@ -14,6 +14,7 @@ public final class ElementRepository {
     public static final By LOGIN_EMAIL_TEXTBOX = By.id("username");
     public static final By LOGIN_PASSWORD_TEXTBOX = By.cssSelector("input[type='password']");
     public static final By LOGIN_BUTTON = By.xpath("//button[@type='submit' and text()='Login']");
+    public static final By LOGIN_MESSAGE = By.id("loginMessage");
     public static final By LOGIN_REMEMBER_CHECKBOX = By.id("remember-me");
     public static final By LOGIN_FORGOT_PASSWORD_LINK = By.linkText("Forgot Password?");
 

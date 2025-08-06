@@ -1,10 +1,19 @@
 package com.fxhive.pages;
 
-/** Placeholder – we’ll flesh this out later */
+import com.fxhive.constants.ElementRepository;
+
 public class HomePage extends BasePage {
 
-    public boolean isWelcomeMessageDisplayed() {
-        // update the locator later with your real one
-        return isDisplayed(com.fxhive.constants.ElementRepository.HOME_WELCOME_MESSAGE);
+    // Check if dashboard URL is loaded
+    public boolean isAtDashboard() {
+        return getCurrentUrl().equals("https://stage.fxhive.site/dashboard.html");
+    }
+
+    // Get any login message text (success or error)
+    public String getLoginMessageText() {
+        if (isDisplayed(ElementRepository.LOGIN_MESSAGE)) {
+            return getText(ElementRepository.LOGIN_MESSAGE).trim();
+        }
+        return "";
     }
 }
